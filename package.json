@@ -1,0 +1,25 @@
+{
+  "name": "upring-demos",
+  "version": "0.0.1",
+  "description": "Some demos about UpRing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcollina/upring-demos.git"
+  },
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcollina/upring-demos/issues"
+  },
+  "homepage": "https://github.com/mcollina/upring-demos#readme",
+  "dependencies": {
+    "baseswim": "^1.0.0",
+    "pino": "^4.0.3",
+    "upring-control": "^0.1.4",
+    "upring-kv": "^0.4.4"
+  }
+}
