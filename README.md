@@ -13,7 +13,7 @@ Some demos about [UpRing](https://github.com/mcollina/upring).
 
 ### To start
 
-Adjust `./demo.sh` to your liking, and run it.
+Adjust `./demo-kv.sh` to your liking, and run it.
 
 ### Example
 
