@@ -39,6 +39,8 @@ You can also use the nginx instance that has been spawned as
 http://localhost:8082, it is configured to load balance across all
 the peers.
 
+Check http://localhost:8042 what is happening with [upring-control](https://github.com/mcollina/upring-control).
+
 ## Publish Subscribe system (chat)
 
 [upring-pubsub](https://github.com/mcollina/upring-pubsub) and
