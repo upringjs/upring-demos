@@ -117,7 +117,7 @@ function list () {
       <ul class="list pl0">
         ${state.messages.map((msg) => yo`
           <li class="outline pa2 mv2">
-            <b>${msg.topic}</b> - ${msg.payload}
+            <b>${msg.topic}</b> - ${JSON.stringify(msg.payload)}
           </li>`)}
       </ul>
     </div>

@@ -7,14 +7,36 @@ const inert = require('inert')
 const UpringPubSub = require('upring-pubsub')
 const hapiPino = require('hapi-pino')
 
-// TODO fill those
-const upringOpts = {}
+const args = require('minimist')(process.argv.slice(2), {
+  boolean: ['help', 'verbose'],
+  default: {
+    port: 0,
+    points: 100,
+    timeout: 1000,
+    verbose: false
+  },
+  alias: {
+    port: 'p',
+    points: 'P',
+    timeout: 't',
+    verbose: 'V'
+  }
+})
+
+const upringOpts = {
+  base: args._,
+  logLevel: args.verbose ? 'debug' : 'info',
+  hashring: {
+    replicaPoints: args.points,
+    joinTimeout: args.timeout
+  }
+}
 
 // Create a server with a host and port
 const server = new Hapi.Server()
 server.connection({
   host: 'localhost',
-  port: 8000
+  port: args.port
 })
 
 
