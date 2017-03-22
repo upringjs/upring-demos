@@ -6,6 +6,7 @@ const multines = require('multines')
 const inert = require('inert')
 const UpringPubSub = require('upring-pubsub')
 const hapiPino = require('hapi-pino')
+const path = require('path')
 
 const args = require('minimist')(process.argv.slice(2), {
   boolean: ['help', 'verbose'],
@@ -76,7 +77,7 @@ server.register([hapiPino, inert, nes, plugin], function (err) {
     path: '/',
     method: 'GET',
     handler: {
-     file: 'index.html'
+     file: path.join(__dirname, 'index.html')
     }
   })
 
@@ -84,7 +85,7 @@ server.register([hapiPino, inert, nes, plugin], function (err) {
     path: '/bundle.js',
     method: 'GET',
     handler: {
-     file: 'bundle.js'
+     file: path.join(__dirname, 'bundle.js')
     }
   })
 })
@@ -104,5 +105,6 @@ server.start((err) => {
     throw err
   }
 
-  console.log('Server running at:', server.info.uri)
+  // expose the address for UpRing monitoring
+  plugin.options.mq.upring.info.url = server.info.uri
 })
