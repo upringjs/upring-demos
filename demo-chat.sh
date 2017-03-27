@@ -3,7 +3,8 @@
 # Linux
 # export MYIP=`ip addr show wlan0 | grep -Po 'inet \K[\d.]+'`
 # Mac
-export MYIP=`ipconfig getifaddr en0`
+#export MYIP=`ipconfig getifaddr en0`
+export MYIP=localhost
 
 tmux new-session -s upring -n baseswim -d
 tmux send-keys -t upring "export MYIP=$MYIP" C-m

@@ -88,6 +88,14 @@ server.register([hapiPino, inert, nes, plugin], function (err) {
      file: path.join(__dirname, 'bundle.js')
     }
   })
+
+  server.route({
+    path: '/upring.png',
+    method: 'GET',
+    handler: {
+     file: path.join(__dirname, 'upring.png')
+    }
+  })
 })
 
 // Add the route
