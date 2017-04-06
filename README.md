@@ -6,6 +6,7 @@ Some demos about [UpRing](https://github.com/mcollina/upring).
 
 1. clone this repository, or download its source code
 2. run `npm install` in this repository directory
+3. run `npm install pino -g`
 
 This has been tested on node v6.9.4.
 
@@ -53,7 +54,7 @@ Check http://localhost:8042 what is happening with [upring-control](https://gith
 
 ### To start
 
-Adjust `./demo-kv.sh` to your liking, and run it.
+Adjust `./demo-chat.sh` to your liking, and run it.
 
 ### Demo Script
 
